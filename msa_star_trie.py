@@ -1,5 +1,6 @@
 import copy, math
 import random
+import time
 from aho_corasick import AhoCorasick
 
 SEGMENT_LENGTH = 3
@@ -61,11 +62,15 @@ def global_align(x, y, s_match, s_mismatch, s_gap):
     return (align_X, align_Y, A[len(y)][len(x)])
 
 if __name__=="__main__":
+    
     seq_num = int(input())
     seqs = []
 
     for _ in range(seq_num):
         seqs.append(input())
+
+    # time to align the sequences
+    start_time = time.time()
 
     # make all sequences lower case
     seqs = [x.lower() for x in seqs]
@@ -170,6 +175,10 @@ if __name__=="__main__":
             chars = chars - 1
         curr_pos += 1
     
+    end_time = time.time()
+    print("")
+    print("Time taken to align sequences: " + str(end_time-start_time))
+
     print("")
     print("The aligned sequences are: ")
     print("")

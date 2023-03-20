@@ -1,4 +1,5 @@
 import copy, math
+import time
 
 S_MATCH = 3
 S_MISMATCH = -1
@@ -122,8 +123,13 @@ if __name__=="__main__":
     for _ in range(seq_num):
         seqs.append(input())
 
+    start_time = time.time()
     MSA_seqs, MSA_score = calc_MSA_seqs(seqs) 
-                
+    
+    end_time = time.time()
+    print("")
+    print("Time taken to align sequences: " + str(end_time-start_time))
+
     # print(MSA_score)
     print("")
     print("The aligned sequences are: ")

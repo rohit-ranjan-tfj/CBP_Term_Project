@@ -1,3 +1,4 @@
+# this is only for .seq files. It basically extracts the sequences from the .seq files and stores them in a list. Then it writes the sequences to multiple files. The number of sequences per file is specified by the max_sequences_per_file variable.
 import os
 
 # Set the path to the directory containing the .seq files

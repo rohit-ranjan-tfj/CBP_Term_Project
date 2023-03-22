@@ -114,7 +114,7 @@ def calc_MSA_seqs(_seqs):
     for k, v in alignments_with_center_2.items():
         MSA_seqs[k] = v[0]
     
-    return MSA_seqs, calc_MSA_score(MSA_seqs)
+    return MSA_seqs, 0
 
 if __name__=="__main__":
     seq_num = int(input())

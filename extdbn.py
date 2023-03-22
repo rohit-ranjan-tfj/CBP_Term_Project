@@ -1,22 +1,22 @@
-# this is only for .seq files. It basically extracts the sequences from the .seq files and stores them in a list. Then it writes the sequences to multiple files. The number of sequences per file is specified by the max_sequences_per_file variable.
+# this is only for .seq files. It basically extracts the sequences from the .dbn files and stores them in a list. Then it writes the sequences to multiple files. The number of sequences per file is specified by the max_sequences_per_file variable.
 import os
 
 # Set the path to the directory containing the .seq files
-directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\Database(5sRNA)\Database(5sRNA)\Archaea'
+directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\dbn'
 
 # Initialize a list to store the sequences
 sequences = []
 
 # Loop through all files in the directory
 for filename in os.listdir(directory):
-    # Check if the file is a .seq file
-    if filename.endswith('.seq'):
+    # Check if the file is a .dbn file
+    if filename.endswith('.dbn'):
         # Open the file and read the contents
         with open(os.path.join(directory, filename), 'r') as f:
             seq = f.readlines()
         # Extract the sequence from the contents
-        name = seq[1].strip()
-        sequence = seq[2].strip()
+        name = seq[0].strip()
+        sequence = seq[1].strip()
         sequence = sequence[:len(sequence)-1]
         # Add the sequence to the list
         sequences.append(sequence)
@@ -32,12 +32,12 @@ for file_num in range(num_files):
     sequences_to_write = sequences[start_index:end_index]
 
     # Make directory to store output files
-    output_dir = 'seqoutput'
+    output_dir = 'dbnoutput'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     # Write the sequences to a new file
-    filename = os.path.join('seqoutput', f'all_sequences_{file_num+1}.txt')
+    filename = os.path.join('dbnoutput', f'all_sequences_{file_num+1}.txt')
     with open(filename, 'w') as f:
         # Write the number of sequences
         f.write(f'{len(sequences_to_write)}\n')

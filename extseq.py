@@ -2,7 +2,7 @@
 import os
 
 # Set the path to the directory containing the .seq files
-directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\Database(5sRNA)\Database(5sRNA)\Plastids'
+directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\Database(5sRNA)\Database(5sRNA)\Archaea'
 
 # Initialize a list to store the sequences
 sequences = []
@@ -22,7 +22,7 @@ for filename in os.listdir(directory):
         sequences.append(sequence)
 
 # Write the sequences to multiple files
-max_sequences_per_file = 100
+max_sequences_per_file = 30
 num_files = (len(sequences) + max_sequences_per_file - 1) // max_sequences_per_file
 
 for file_num in range(num_files):

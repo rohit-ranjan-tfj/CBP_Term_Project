@@ -3,7 +3,7 @@ import random
 import time
 from aho_corasick import AhoCorasick
 
-SEGMENT_LENGTH = 10
+SEGMENT_LENGTH = 50
 S_MATCH = 3
 S_MISMATCH = -1
 S_GAP = -2

@@ -2,7 +2,7 @@
 import os
 
 # Set the path to the directory containing the .seq files
-directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\Database(5sRNA)\Database(5sRNA)\Archaea'
+directory = 'E:\College\Sem 6\Computational Biophysics\Term Project\Dataset\Database(5sRNA)\Database(5sRNA)\Plastids'
 
 # Initialize a list to store the sequences
 sequences = []
